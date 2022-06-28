@@ -7,42 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("colorThemeLocal", "default");
   }
 
-  checkStatus();
+  checkTheme();
 
-  function checkStatus() {
-    console.log("pozvan set theme");
-
-    // mozda ni ne treba ovo sve
+  function checkTheme() {
     if (localStorage.getItem("colorThemeLocal") === "default-theme") {
+      pageTheme.classList.remove("third-theme");
       pageTheme.classList.remove("second-theme");
-      pageTheme.classList.add("default");
+      pageTheme.classList.add("default-theme");
     } else if (localStorage.getItem("colorThemeLocal") === "second-theme") {
-      pageTheme.classList.remove("default");
+      pageTheme.classList.remove("default-theme");
+      pageTheme.classList.remove("third-theme");
       pageTheme.classList.add("second-theme");
     } else {
-      pageTheme.classList.remove("default");
+      pageTheme.classList.remove("default-theme");
+      pageTheme.classList.remove("second-theme");
       pageTheme.classList.add("third-theme");
     }
   }
 
-  // function to set a given theme/color-scheme
   function setTheme(themeName) {
-    console.log(themeName);
     localStorage.setItem("colorThemeLocal", themeName);
-    console.log(
-      `colorThemeLocal novi: ${localStorage.getItem("colorThemeLocal")}`
-    );
     document.documentElement.className = themeName;
   }
-
-  // Immediately invoked function to set the theme on initial load
-  // (function () {
-  //   if (localStorage.getItem("theme") === "default-theme") {
-  //     setTheme("default-theme");
-  //   } else {
-  //     setTheme("second-theme");
-  //   }
-  // })();
 
   var navEl = document.querySelectorAll(".navig");
   for (let i = 0; i < navEl.length; i++) {
@@ -58,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   switch (naslov) {
     case "Pocetna stranica": {
+      // theme
       const paleta1El = document.getElementById("paleta1");
       const paleta2El = document.getElementById("paleta2");
       const paleta3El = document.getElementById("paleta3");
@@ -67,21 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const btnZatvori = document.querySelector(".zatvori");
 
       function promjenaPaleta(selectedTheme) {
-        console.log("pro");
         setTheme(selectedTheme);
         pageTheme.classList.remove("default-theme");
         pageTheme.classList.remove("third-theme");
         pageTheme.classList.remove("second-theme");
         pageTheme.classList.add(selectedTheme);
       }
-
-      // function promjenaPaleta1() {
-      //   console.log("pro");
-      //   setTheme("default-theme");
-      //   pageTheme.classList.remove("third-theme");
-      //   pageTheme.classList.remove("second-theme");
-      //   pageTheme.classList.add("default-theme");
-      // }
 
       paleta1El.addEventListener("click", () => {
         promjenaPaleta("default-theme");
@@ -93,21 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
         promjenaPaleta("third-theme");
       });
 
-      // function promjenaPaleta3() {
-      //   console.log("pro");
-      //   setTheme("third-theme");
-      //   pageTheme.classList.remove("second-theme");
-      //   pageTheme.classList.remove("default-theme");
-      //   pageTheme.classList.add("third-theme");
-      // }
-
-      // function promjenaPaleta2() {
-      //   setTheme("second-theme");
-      //   pageTheme.classList.remove("third-theme");
-      //   pageTheme.classList.remove("default-theme");
-      //   pageTheme.classList.add("second-theme");
-      // }
-
       const otvoriSkocni = function () {
         paletaProzorEl.classList.remove("sakrij");
       };
@@ -115,8 +78,77 @@ document.addEventListener("DOMContentLoaded", function () {
       const zatvoriSkocni = function () {
         paletaProzorEl.classList.add("sakrij");
       };
+
       paletaBojaEl.addEventListener("click", otvoriSkocni);
       btnZatvori.addEventListener("click", zatvoriSkocni);
+
+      // CANVAS
+
+      const btnPrikaziCanvas = document.querySelector(".prikaziCanvas");
+      const btnGraf = document.querySelector("#graf-btn");
+      const obrazacGrafEl = document.querySelector(".obrazacGraf");
+      let opisGrafaEl = document.querySelector(".opisGrafa");
+      const podatakEl = document.forms["forma-canvas"]["elementUnosa"];
+      const kolicinaEl = document.forms["forma-canvas"]["elementKolicine"];
+      var poljePodataka = [];
+      var poljeOpisa = [];
+      var boje = [
+        "#f78e2c",
+        "#f3d320",
+        "#42c98a",
+        "#e75b0a",
+        "#500fb0",
+        "#e7527c",
+        "#542382",
+        "#6b7280",
+        "#111111",
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        prikaziCanvas();
+      });
+      btnPrikaziCanvas.addEventListener("click", function () {
+        btnPrikaziCanvas.classList.add("sakrij");
+        obrazacGrafEl.classList.remove("sakrij2");
+      });
+      let j = 1;
+      btnGraf.addEventListener("click", function () {
+        poljePodataka.push(kolicinaEl.value);
+        poljeOpisa.push(podatakEl.value);
+        var list = document.getElementById("list");
+        var newEl = document.createElement("li");
+        newEl.setAttribute("id", "item" + j + "");
+        newEl.innerHTML += `${j}. ${podatakEl.value}`;
+        newEl.setAttribute("onclick", "remove(this)");
+        list.appendChild(newEl);
+        newEl.style.color = "#f4f4f4";
+        nacrtajGraf();
+        j++;
+      });
+      prikaziCanvas();
+      // funkcije:
+      function prikaziCanvas() {
+        var temp = document.getElementsByTagName("template")[0];
+        var clon = temp.content.cloneNode(true);
+        document.getElementById("novi").appendChild(clon);
+        nacrtajGraf();
+      }
+
+      function nacrtajGraf() {
+        var ctx = myCanvas.getContext("2d");
+
+        for (var i = 0; i < poljePodataka.length; i++) {
+          drawHistogram([i] + 10, 0, 55, poljePodataka[i], boje[i]);
+        }
+        function drawHistogram(x, y, w, h, color) {
+          ctx.save();
+          ctx.fillStyle = color;
+          ctx.fillRect(x, y, w, h);
+          ctx.restore();
+        }
+      }
+
+      btnGraf.addEventListener("click", function () {});
 
       const ispisParEl = document.querySelector(".ispod-slike");
       let X = -1,
@@ -131,11 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
       mnogokutEL.addEventListener("mouseover", sve);
 
       function sve() {
-        console.log(this.classList.value);
-
         let oblik = this.classList.value;
         let koordinate = this.getAttribute("coords");
-        console.log(koordinate);
 
         var odvojeno = koordinate.split(",");
         ispisParEl.innerHTML = `kursor: X=${X}, Y=${Y} ==> ${oblik}: `;
@@ -174,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     case "Obrazac": {
-      console.log(`Dobrodosli na ${naslov}`);
       const btnURedu = document.querySelector(".uredu");
       let drugiDioPrikazan = false;
 
@@ -299,14 +327,12 @@ document.addEventListener("DOMContentLoaded", function () {
           provjera5 &&
           provjera9
         ) {
-          console.log("sve ispunjeno");
           if (!drugiDioPrikazan) {
             drugiDioPrikazan = true;
             prikazi();
             e.stopImmediatePropagation();
             e.preventDefault();
           } else {
-            console.log("vec je otvoreno i sad ce se provjerit");
             drugiDioProvjere();
             if (drugiDioProvjere() == false) {
               e.stopImmediatePropagation();
@@ -317,7 +343,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function drugiDioProvjere(e) {
-        console.log("drugi dio provjere");
         let provjera6 = true,
           provjera7 = true,
           provjera8 = true;
@@ -329,9 +354,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const label6 = document.querySelector("#pomeri-me");
         const label7 = document.querySelector("#labelemail");
         const label8 = document.querySelector("#labeltelefon");
-        console.log(`email: ${emailEl.value}`);
-        console.log(`datum: ${datumEl.value}`);
-        console.log(`tel: ${telEl.value}`);
 
         if (!datumEl.value) {
           provjera6 = false;
@@ -347,7 +369,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         let regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-        if (regexEmail.test(emailEl.value)) console.log("email je u regexu");
 
         if (!emailEl.value || !regexEmail.test(emailEl.value)) {
           provjera7 = false;
@@ -362,8 +383,6 @@ document.addEventListener("DOMContentLoaded", function () {
           emailEl.style.backgroundColor = "var(--yellowish)";
         }
         let regexTel = /^[0-9]{3}[-\s\.][0-9]{3}[-\s\.][0-9]{4,6}$/;
-
-        if (regexTel.test(telEl.value)) console.log("telefon je u regexu");
 
         if (!telEl.value || !regexTel.test(telEl.value)) {
           provjera8 = false;

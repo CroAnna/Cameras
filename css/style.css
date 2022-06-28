@@ -178,11 +178,12 @@ video {
 
 .naslovna figcaption {
   background-color: var(--dark);
-  margin: 10px;
+  margin: 40px auto;
   border: 2px;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
   text-align: justify;
+  width: 80%;
 }
 
 .naslovna figcaption:active {
@@ -342,7 +343,6 @@ label {
 }
 
 table {
-  /* margin: 0 auto; */
   margin: 10px 50px 10px 50px;
 }
 
@@ -389,7 +389,6 @@ h4 + ul {
 .ime {
   text-align: center;
   padding: 20px;
-  /* margin: 15px; */
 }
 
 .ime u {
@@ -442,12 +441,10 @@ button#gumb-opis {
 }
 
 .slika-vrh {
-  /* width: 15%; */
   max-width: 65px;
-
   position: fixed;
   float: right;
-  top: 0px; /* your required value */
+  top: 0px;
   right: 0;
   position: fixed;
 }
@@ -457,6 +454,10 @@ a ~ ul {
 
 .sakrij {
   visibility: hidden;
+}
+
+.sakrij2 {
+  display: none;
 }
 
 iframe {
@@ -577,4 +578,44 @@ q {
 .slike-palete-boja img {
   cursor: pointer;
   width: 30%;
+}
+
+.prikaziCanvas {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px;
+}
+
+canvas {
+  width: 80%;
+  max-width: 1000px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 10px;
+  border: var(--yellowish) solid;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.graf-btn {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.graf-fieldset {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.bijela-slova {
+  color: var(--light);
 }

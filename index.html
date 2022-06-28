@@ -145,11 +145,58 @@
           </figcaption>
         </figure>
       </div>
-      <template>
-        <div>
-          <canvas width="200" height="100"></canvas>
-        </div>
-      </template>
+
+      <button class="prikaziCanvas">GRAF</button>
+      <div class="obrazacGraf sakrij2">
+        <form
+          id="forma-canvas"
+          name="forma-canvas"
+          action="index.html"
+          method="post"
+          target="_blank"
+          novalidate
+        >
+          <div class="obrazacGraf">
+            <fieldset name="ime" class="graf-fieldset">
+              <legend class="tekstNaStr">UNOS U GRAF</legend>
+              <div>
+                <label for="elementUnosa" id="labelElementUnosa"
+                  >Podatak:
+                </label>
+                <input
+                  class="prijava"
+                  type="text"
+                  name="elementUnosa"
+                  id="elementUnosa"
+                />
+              </div>
+
+              <div>
+                <label for="elementKolicine" id="labelElementKolicine"
+                  >Kolicina:
+                </label>
+                <input
+                  class="prijava"
+                  type="number"
+                  name="elementKolicine"
+                  id="elementKolicine"
+                />
+              </div>
+              <button type="reset" id="graf-btn">UNESI</button>
+            </fieldset>
+          </div>
+        </form>
+        <div id="novi"></div>
+        <template>
+          <div>
+            <canvas id="myCanvas" width="900" height="500"></canvas>
+            <div class="opisGrafa okvir">
+              <ul id="list"></ul>
+            </div>
+          </div>
+        </template>
+      </div>
+
       <script src="js/script.js" defer></script>
     </main>
     <footer>
@@ -157,11 +204,6 @@
         <a href="#zaglavlje">
           <img src="materijali/top.png" alt="na-vrh" width="60" />
         </a>
-        <a href="#zaglavlje">
-          <img src="materijali/top.png" alt="na-vrh" width="60" />
-        </a>
-        &copy; 2022.,
-        <a href="mailto:style@google.com">Ana </a>
       </div>
     </footer>
   </body>
