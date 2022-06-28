@@ -1,0 +1,35 @@
+@media print {
+  * {
+    filter: grayscale(100%);
+  }
+  nav,
+  header,
+  footer {
+    display: none;
+    visibility: hidden;
+  }
+  #gumbi {
+    display: none;
+    visibility: hidden;
+  }
+  .ne-prikazuj {
+    display: none;
+    visibility: hidden;
+  }
+  .slike-multimedija,
+  .mult {
+    display: block;
+    width: 100%;
+  }
+
+  .tem-cjelina {
+    float: left;
+    width: 50%;
+  }
+  .tem-cjelina2:after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 50%;
+  }
+}

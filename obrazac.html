@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="knjige, OWT" />
+    <meta name="author" content="Ana " />
+    <meta name="description" content="input, legend, form" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="materijali/ikona.png" />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style_responzivni_dizajn.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style_ispis.css"
+      type="text/css"
+      media="print"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Obrazac</title>
+  </head>
+
+  <body>
+    <header id="zaglavlje">
+      <h4 class="naslovni-tekst">Obrazac</h4>
+      <noscript>Vaš Web preglednik ne podržava JavaScript</noscript>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a class="navig" href="index.html">Pocetna</a></li>
+        <li><a class="navig" href="obrazac.html">Obrazac</a></li>
+        <li><a class="navig" href="podaci/popis.html">Popis</a></li>
+        <li><a class="navig" href="ostalo/o_autoru.html">O autoru</a></li>
+        <li><a class="navig" href="ostalo/kreativna.html">Kreativna</a></li>
+        <li><a class="navig" href="ostalo/multimedija.html">Multimedija</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form
+        id="forma"
+        name="forma"
+        action="https://spider.google.com/OWT/materijali/ispis_forme.php"
+        method="post"
+        target="_blank"
+        novalidate
+      >
+        <div class="tem-cjelina">
+          <fieldset name="kamera">
+            <legend>Kamera</legend>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="proizvodac[]" id="labelproizvodac">
+                  Proizvodac (2):
+                </label>
+              </div>
+              <div class="stupac">
+                <select multiple name="proizvodac[]" id="proizvodac[]" size="6">
+                  <optgroup label="Najpoznatije marke">
+                    <option value="canon">Canon</option>
+                    <option value="nikon">Nikon</option>
+                    <option value="sony">Sony</option>
+                  </optgroup>
+                  <optgroup label="Ostali proizvodaci">
+                    <option value="panasonic">Panasonic</option>
+                    <option value="fujifilm">Fujifilm</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="nazivKamere" id="labelnazivKamere"
+                  >Naziv kamere:
+                </label>
+              </div>
+              <div class="stupac">
+                <input type="text" name="nazivKamere" id="nazivKamere" />
+                <br />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="specifikacije" id="labelspecifikacije"
+                  >Specifikacije:
+                </label>
+              </div>
+              <div class="stupac">
+                <textarea
+                  name="specifikacije"
+                  id="specifikacije"
+                  cols="40"
+                  rows="10"
+                  maxlength="1000"
+                ></textarea>
+                <br /><br />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <p class="txt-vrsta-kamere" id="labeltxt-vrsta-kamere">
+                  Vrsta kamere:
+                </p>
+              </div>
+              <div class="stupac">
+                <input type="radio" name="vrstaKamere" id="DSLR" value="DSLR" />
+                DSLR <br />
+                <!-- required se odnosi na cijelu grupu koja ima isti name-->
+                <input
+                  type="radio"
+                  name="vrstaKamere"
+                  id="Mirrorless"
+                  value="Mirrorless"
+                />
+                Mirrorless <br />
+                <input
+                  type="radio"
+                  name="vrstaKamere"
+                  id="Polaroid"
+                  value="Polaroid"
+                />
+                Polaroid <br />
+                <input
+                  type="radio"
+                  name="vrstaKamere"
+                  id="Ostalo"
+                  value="Ostalo"
+                />
+                Ostalo<br /><br />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="ocuvanostKamere" id="labelOcuvanostKamere"
+                  >Očuvanost kamere:</label
+                >
+              </div>
+              <div class="stupac">
+                <input
+                  type="number"
+                  id="ocuvanostKamere"
+                  name="ocuvanostKamere"
+                  value=""
+                />
+                <br />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="boja">Odaberi boju kamere:</label>
+              </div>
+              <div class="stupac">
+                <input type="color" id="boja" name="boja" value="#202020" />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="ljepota">Ljepota:</label>
+              </div>
+              <div class="stupac">
+                <input
+                  type="range"
+                  id="ljepota"
+                  name="ljepota"
+                  min="1"
+                  max="10"
+                  step="1"
+                  value="5"
+                />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label for="cijena" id="labelcijena">Cijena:</label>
+              </div>
+              <div class="stupac">
+                <input
+                  type="number"
+                  id="cijena"
+                  name="cijena"
+                  placeholder="kn"
+                />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="tem-cjelina2 sakrij">
+          <fieldset name="kupac">
+            <legend id="info-o-kupcu">Informacije o kupcu</legend>
+            <br />
+            <div class="red">
+              <div class="stupac">
+                <label id="pomeri-me" for="datumVrijeme"
+                  >Datum i vrijeme kupnje:
+                </label>
+              </div>
+              <div class="stupac">
+                <input
+                  type="text"
+                  name="datumVrijeme"
+                  id="datumVrijeme"
+                  placeholder="dd.mm.gggg. hh:mm:ss"
+                />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label id="labelemail" for="email">E-mail kupca: </label>
+              </div>
+              <div class="stupac">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@example.com"
+                />
+              </div>
+            </div>
+
+            <div class="red">
+              <div class="stupac">
+                <label id="labeltelefon" for="telefon">Telefon kupca: </label>
+              </div>
+              <div class="stupac">
+                <input
+                  type="tel"
+                  id="telefon"
+                  name="telefon"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="012-345-6789"
+                />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+      <div id="gumbi-okvir">
+        <div id="gumbi">
+          <button type="reset" value="PONISTI" form="forma">
+            PONISTI UNOS
+          </button>
+          <button class="uredu" type="submit" value="U REDU" form="forma">
+            U REDU
+          </button>
+        </div>
+      </div>
+      <script src="js/script.js"></script>
+    </main>
+    <footer>
+      <div>
+        <a href="https://creativecommons.org/licenses/?lang=hr">
+          <img src="materijali/cc.png" alt="cc-ikona" width="60" />
+        </a>
+        &copy; 2022.,
+        <a href="mailto:style@gmail.com">Ana </a>
+        <a href="#zaglavlje">
+          <img src="materijali/top.png" alt="na-vrh" width="60" />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

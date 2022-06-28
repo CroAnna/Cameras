@@ -1,0 +1,173 @@
+@media screen and (max-width: 480px) {
+  * {
+    font-size: small;
+  }
+  nav,
+  input {
+    width: 90%;
+    border-radius: 10px;
+    text-align: justify;
+    padding: 2%;
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%;
+    background-color: var(--darkgreen);
+    margin: 4px 0 4px 0;
+  }
+
+  nav ul li a {
+    line-height: 40px;
+    text-align: justify;
+    padding: 10px;
+    border-radius: 3px;
+  }
+
+  fieldset {
+    width: fit-content;
+    border-radius: 10px;
+    text-align: justify;
+  }
+
+  select {
+    width: 200%;
+    border-radius: 5px;
+    text-align: justify;
+  }
+
+  .stupac {
+    float: none;
+  }
+
+  label {
+    font-size: small;
+    width: 250px;
+    margin: 0;
+  }
+
+  form {
+    padding: 20px;
+    max-width: 300px;
+    position: static;
+  }
+
+  form input {
+    margin: 5px;
+    padding: 10px;
+    width: 290px;
+  }
+
+  input[type="color"] {
+    height: 50px;
+    width: 250px;
+  }
+
+  [type="radio"] {
+    transform: scale(1.4);
+  }
+
+  select {
+    width: 250px;
+    margin: 5px;
+    padding: 20px;
+    max-width: 400px;
+  }
+
+  legend#info-o-kupcu {
+    padding-top: 40px;
+  }
+  optgroup {
+    padding: 5px;
+  }
+
+  textarea {
+    margin: 5px;
+    width: 250px;
+    height: 150px;
+  }
+
+  form input {
+    width: 250px;
+  }
+
+  legend {
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .txt-vrsta-kamere {
+    width: 250px;
+    margin: 5px;
+  }
+
+  .stupac {
+    width: 250px;
+  }
+
+  button {
+    width: 40%;
+    height: 50px;
+    margin: 20px 10px;
+    font-size: 100%;
+  }
+
+  img {
+    width: 200px;
+  }
+
+  .okvir {
+    margin: 0 10px 0 10px;
+    border-radius: 15px;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  .grid-container {
+    grid-template-columns: none;
+    grid-template-rows: none;
+  }
+
+  .slike-multimedija {
+    border-radius: 5px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+  }
+
+  .slike-multimedija:hover {
+    transform: scale(1.2);
+  }
+
+  .sakrij-male {
+    visibility: hidden;
+    display: none;
+  }
+
+  .tablica {
+    width: 100%;
+    padding: 20px;
+  }
+
+  table,
+  th,
+  tr {
+    margin: 5px;
+  }
+
+  .tem-cjelina {
+    float: none;
+  }
+
+  .opis {
+    margin: 20px;
+  }
+
+  .naslovni-tekst {
+    font-size: 20px;
+  }
+}

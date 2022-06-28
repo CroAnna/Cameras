@@ -1,0 +1,580 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: large;
+}
+
+.default-theme {
+  --dark: #374151;
+  --darker: #272727;
+  --darkerr: #313131;
+  --gray: #6b7280;
+  --light: #eee;
+  --orange: #f78e2c;
+  --yellow: #f3d320;
+  --yellowish: #f5cc5c;
+  --green: #42c98a;
+  --darkgreen: #37a572;
+  --red: #e75b0a;
+  --blue: #500fb0;
+}
+
+.second-theme {
+  --dark: #b4b4b4;
+  --darker: #f1f1f1;
+  --darkerr: #cacaca;
+  --gray: #6b7280;
+  --light: rgb(5, 5, 5);
+  --orange: rgb(109, 24, 98);
+  --yellow: #f04978;
+  --yellowish: #e7527c;
+  --green: #8842c9;
+  --darkgreen: #542382;
+  --red: #4a004c;
+  --blue: #500fb0;
+}
+
+.third-theme {
+  --dark: #ececec;
+  --darker: #ffffff;
+  --darkerr: #f5f5ff;
+  --gray: #afafaf;
+  --light: #15013be3;
+  --orange: #2691d8;
+  --yellow: #b7c0d3;
+  --yellowish: #9ec6eb;
+  --green: #616161;
+  --darkgreen: #261e53;
+  --red: #424242;
+  --blue: #84a4ce;
+}
+
+body {
+  background-color: var(--darker);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figcaption {
+  color: var(--light);
+}
+
+a {
+  color: var(--orange);
+  font-weight: 400;
+}
+
+li {
+  list-style-type: none;
+}
+
+nav {
+  background-color: var(--green);
+  text-align: center;
+  position: sticky;
+  top: 0;
+  display: block;
+  border-radius: 20px;
+  padding: 0px 80px;
+  margin: 25px auto;
+  padding: 5px 0 5px 0;
+  width: 80%;
+  justify-content: center;
+  text-align: center;
+}
+
+nav ul {
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+nav ul li {
+  text-align: center;
+  display: inline;
+  padding: 11px;
+}
+
+nav ul li a {
+  color: var(--darker);
+  font-weight: 450;
+  font-size: 150%;
+  text-decoration: none;
+  height: fit-content;
+  display: inline;
+}
+
+nav ul li:hover {
+  color: var(--gray);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: var(--darkerr);
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  width: auto;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+footer img {
+  max-width: 50px;
+  display: inline-block;
+}
+
+footer a {
+  font-size: medium;
+}
+
+.slike-multimedija {
+  margin: 20px;
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.slike-multimedija:hover {
+  transform: scale(1.2);
+}
+
+.naslovni-tekst {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 15px;
+  font-size: 25px;
+  background-color: var(--darkerr);
+  z-index: 1;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.naslovna-link {
+  margin-top: 40px;
+}
+
+video {
+  width: 200px;
+  height: 200px;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.naslovna figcaption {
+  background-color: var(--dark);
+  margin: 10px;
+  border: 2px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: justify;
+}
+
+.naslovna figcaption:active {
+  background-color: var(--orange);
+}
+
+input:required {
+  background-color: var(--yellowish);
+}
+
+figcaption.mult {
+  text-align: center;
+}
+
+figcaption > q {
+  color: var(--orange);
+  overflow: hidden;
+}
+
+legend {
+  font-size: 30px;
+  color: var(--red);
+  text-align: center;
+}
+
+form {
+  background-color: var(--darkerr);
+  max-width: 1000px;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0px auto;
+  padding: 30px;
+  height: fit-content;
+}
+
+.tem-cjelina {
+  float: left;
+  width: 50%;
+}
+.tem-cjelina2:after {
+  content: "";
+  display: table;
+  clear: both;
+  width: 50%;
+}
+
+form input {
+  background-color: var(--yellowish);
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid rgb(10, 10, 10);
+  border-radius: 4px;
+  width: 400px;
+}
+
+input[type="color"] {
+  height: 50px;
+  padding: 0;
+}
+
+[type="radio"] {
+  width: auto;
+  transform: scale(1.8);
+}
+
+select {
+  background-color: var(--yellowish);
+  width: 400px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  max-width: 600px;
+}
+
+optgroup {
+  padding: 5px;
+}
+
+textarea {
+  background-color: var(--yellowish);
+  width: 400px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  max-width: 600px;
+}
+
+fieldset {
+  text-transform: uppercase;
+  font-weight: bold;
+  /* display: block; */
+  color: var(--orange);
+}
+
+.txt-vrsta-kamere {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: var(--orange);
+  margin: 20px;
+}
+
+#gumbi {
+  display: flex;
+  align-items: center;
+  justify-content: center; /*ovo dvoje ide skupa*/
+}
+
+/* #gumbi-okvir {
+    display: block;
+  } */
+
+button {
+  background-color: var(--green);
+  text-align: center;
+  padding: 10px 30px;
+  width: 300px;
+  height: 80px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 50px 20px;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+button:hover {
+  background-color: var(--darkgreen);
+  transform: translateY(-8px);
+  transition: transform 400ms; /*sporo pomicanje*/
+}
+
+label {
+  margin: 30px 20px 0 20px;
+  display: block; /*da se tekst pomakne malo dole tj da se vidi i top margin */
+}
+
+::placeholder {
+  color: var(--darkerr);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 15px;
+}
+
+.okvir {
+  background-color: var(--darkerr);
+  max-width: 1000px;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  word-break: break-all;
+  overflow-x: hidden;
+}
+
+table {
+  /* margin: 0 auto; */
+  margin: 10px 50px 10px 50px;
+}
+
+table,
+th,
+td {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--dark);
+  word-break: break-all;
+}
+
+td {
+  text-align: center;
+}
+
+.tabl-wrapper {
+  padding: 20px;
+}
+
+.tablica tr:nth-child(2n) {
+  background: var(--orange);
+}
+
+.tablica tr:nth-child(2n + 1) {
+  background: var(--yellowish);
+}
+.tablica tr:hover {
+  background-color: var(--darkgreen);
+}
+
+h4 + ul {
+  padding: 5px 0 5px 0;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.klizac {
+  display: inline-block;
+  width: 24%;
+  color: var(--light);
+}
+
+.ime {
+  text-align: center;
+  padding: 20px;
+  /* margin: 15px; */
+}
+
+.ime u {
+  font-size: xx-large;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--orange),
+    var(--yellow)
+  );
+  padding: 15px;
+  border-radius: 5px;
+  color: var(--darker);
+}
+
+button#gumb-opis {
+  font-size: large;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--orange),
+    var(--yellow)
+  );
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--darker);
+}
+
+.opis {
+  color: var(--light);
+  text-align: center;
+  width: auto;
+  letter-spacing: 5px;
+}
+
+.velika {
+  text-transform: uppercase;
+}
+
+.moja-slika {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.zvuk {
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+.slika-vrh {
+  /* width: 15%; */
+  max-width: 65px;
+
+  position: fixed;
+  float: right;
+  top: 0px; /* your required value */
+  right: 0;
+  position: fixed;
+}
+a ~ ul {
+  background-color: var(--darkerr);
+}
+
+.sakrij {
+  visibility: hidden;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.pregled {
+  background-color: var(--darkerr);
+  border-radius: 30px;
+  padding: 20px;
+  color: var(--light);
+  text-align: center;
+  margin-top: 5px;
+  width: 100%;
+}
+.pregled h1 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.pregled ul {
+  background-color: var(--darker);
+  border-radius: 10px;
+}
+
+.validacije {
+  display: block;
+  background-color: var(--darker);
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
+#poc-slika {
+  width: 100%;
+  max-width: 600px;
+}
+
+#pomeri-me {
+  margin-top: 0;
+  padding: 0;
+}
+
+.multimedija-stranica {
+  overflow-x: hidden;
+}
+
+q {
+  word-break: normal;
+}
+
+.prijava-btn2 {
+  font-size: large;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--orange),
+    var(--yellow)
+  );
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 15px;
+  width: 30%;
+  height: 10%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--darker);
+  margin: 5px auto 5px auto;
+  width: 150px;
+  cursor: pointer;
+}
+
+.prozor {
+  background-color: var(--dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  z-index: 10;
+  border-radius: 15px;
+  display: block;
+  padding: 30px;
+}
+.zatvori {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  float: right;
+  text-align: center;
+  padding: 0;
+}
+.zatamni-pozadinu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.prozor-tekst {
+  font-size: 30px;
+  text-align: center;
+}
+
+.slike-palete-boja {
+  width: fit-content;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px;
+}
+
+.slike-palete-boja img {
+  cursor: pointer;
+  width: 30%;
+}

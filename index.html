@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="knjige, OWT" />
+    <meta name="author" content="Ana " />
+    <meta name="description" content="nav, a, li" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="materijali/ikona.png" />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style_responzivni_dizajn.css"
+      type="text/css"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style_ispis.css"
+      type="text/css"
+      media="print"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pocetna stranica</title>
+  </head>
+
+  <body>
+    <header id="zaglavlje">
+      <h4 class="naslovni-tekst">Fotoaparati</h4>
+      <ul>
+        <li>
+          <a class="prijava-btn2">Paleta boja</a>
+        </li>
+        <!--<li class="naslovna-link">
+          <a href="obrazac.html">Prijava</a> 
+        </li>-->
+      </ul>
+      <noscript>Vaš Web preglednik ne podržava JavaScript</noscript>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a class="navig" href="index.html">Pocetna</a></li>
+        <li><a class="navig" href="obrazac.html">Obrazac</a></li>
+        <li><a class="navig" href="podaci/popis.html">Popis</a></li>
+        <li><a class="navig" href="ostalo/o_autoru.html">O autoru</a></li>
+        <li>
+          <a class="navig" href="ostalo/kreativna.html">Kreativna</a>
+        </li>
+        <li>
+          <a class="navig" href="ostalo/multimedija.html">Multimedija</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="paleta-prozor sakrij">
+        <div class="prozor">
+          <div>
+            <button class="prijava-btn2 zatvori">&times;</button>
+          </div>
+          <div>
+            <h1 class="prozor-tekst">Koju paletu boja želiš?</h1>
+          </div>
+          <div class="slike-palete-boja">
+            <img src="materijali/paleta1.png" alt="paleta1" id="paleta1" />
+            <img src="materijali/paleta2.png" alt="paleta2" id="paleta2" />
+            <img src="materijali/paleta3.png" alt="paleta3" id="paleta3" />
+          </div>
+        </div>
+        <div class="zatamni-pozadinu"></div>
+      </div>
+
+      <div class="naslovna">
+        <figure>
+          <img
+            id="poc-slika"
+            src="materijali/dslr.jpg"
+            usemap="#interaktivna"
+            alt="dslr-kamera"
+          />
+          <map name="interaktivna">
+            <area
+              href="ostalo/multimedija.html#videoMaterijal"
+              shape="rect"
+              class="pravokutnik"
+              coords="0,0,100,103"
+              alt="pravokutnik"
+              target="_blank"
+            />
+            <area
+              href="ostalo/multimedija.html#slike"
+              class="krug"
+              shape="circle"
+              coords="10,80,120"
+              alt="krug"
+              target="_blank"
+            />
+            <area
+              href="ostalo/multimedija.html#audioMaterijal"
+              class="mnogokut"
+              shape="poly"
+              coords="400,400,155,98,200,323,477,122,545,545,412,444"
+              alt="visekutnik"
+              target="_blank"
+            />
+          </map>
+          <figcaption class="ispod-slike">
+            Zahvaljujući fotoaparatima koji mogu automatski fokusirati i držati
+            tisuće fotografija na svojoj internoj memorijskoj kartici, digitalna
+            fotografija sada je pristupačnija nego ikad, ali razumijevanje
+            opcija fotoaparata prije velike kupnje i dalje je važno.
+            <br />
+            DSLR je pojam koji je postao sinonim za digitalne fotoaparate, ali
+            digitalna refleksna kamera s jednom lećom (značajna po tome što
+            omogućuje izmjenjive leće na istom tijelu fotoaparata) samo je jedna
+            vrsta digitalnog fotoaparata.
+            <br />
+            DSLR fotoaparati vam omogućuju kombiniranje kućišta fotoaparata s
+            nastavcima za objektive po vašem izboru, bilo da se radi o ribljem
+            oku ili zoom objektivu.
+            <q
+              >Možete nabaviti različite vrste leća koje služe različitim
+              svrhama i daju vam drugačiji izgled</q
+            >
+            , objašnjava fotografkinja Ivy Chen:
+            <q>DSLR-ovi su mnogo svestraniji u tom pogledu.</q>
+            DSLR-i su izdržljivi, svestrani u svojoj sposobnosti uparivanja s
+            brojnim objektivima i priključcima, imaju dugo trajanje baterije i
+            daju vam veću brzinu snimanja uz bolje automatsko fokusiranje — to
+            su razlozi zašto fotografi vole ovu vrstu fotoaparata. Najbolji DSLR
+            za vas ovisit će o objektu koji namjeravate snimati i situaciji u
+            kojoj namjeravate snimati. Različiti modeli DSLR-a i objektivi nude
+            različite prednosti, ali s tim znanjem, potraga za pravim
+            fotoaparatom za vas trebala bi biti lakša.
+          </figcaption>
+        </figure>
+      </div>
+      <template>
+        <div>
+          <canvas width="200" height="100"></canvas>
+        </div>
+      </template>
+      <script src="js/script.js" defer></script>
+    </main>
+    <footer>
+      <div>
+        <a href="#zaglavlje">
+          <img src="materijali/top.png" alt="na-vrh" width="60" />
+        </a>
+        <a href="#zaglavlje">
+          <img src="materijali/top.png" alt="na-vrh" width="60" />
+        </a>
+        &copy; 2022.,
+        <a href="mailto:style@google.com">Ana </a>
+      </div>
+    </footer>
+  </body>
+</html>
