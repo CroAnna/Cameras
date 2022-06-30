@@ -274,7 +274,6 @@ textarea {
 fieldset {
   text-transform: uppercase;
   font-weight: bold;
-  /* display: block; */
   color: var(--orange);
 }
 
@@ -289,12 +288,9 @@ fieldset {
 #gumbi {
   display: flex;
   align-items: center;
-  justify-content: center; /*ovo dvoje ide skupa*/
+  justify-content: center; 
 }
 
-/* #gumbi-okvir {
-    display: block;
-  } */
 
 button {
   background-color: var(--green);
@@ -313,12 +309,12 @@ button {
 button:hover {
   background-color: var(--darkgreen);
   transform: translateY(-8px);
-  transition: transform 400ms; /*sporo pomicanje*/
+  transition: transform 400ms;
 }
 
 label {
   margin: 30px 20px 0 20px;
-  display: block; /*da se tekst pomakne malo dole tj da se vidi i top margin */
+  display: block;
 }
 
 ::placeholder {

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const pageTheme = document.body;
 
   if (localStorage.getItem("colorThemeLocal") === null) {
-    localStorage.setItem("colorThemeLocal", "default");
+    localStorage.setItem("colorThemeLocal", "default-theme");
   }
 
   checkTheme();
